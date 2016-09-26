@@ -71,7 +71,7 @@ namespace _09_Portfolio
                 total = total + s.GetValue();
             }
             return total;
-        }
+        } 
 
         public override string ToString()
         {
