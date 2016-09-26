@@ -85,7 +85,10 @@ namespace _09_Portfolio
             Stock abc = (Stock)obj;
             return (this.Symbol == abc.Symbol && this.NumShares == abc.NumShares && this.PricePerShare == abc.PricePerShare); 
         }
-            
-        
+        public override int GetHashCode()
+        {
+            return this.GetHashCode();
+        }
+
     }  
 }
