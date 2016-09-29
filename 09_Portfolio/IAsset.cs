@@ -1,6 +1,6 @@
 ﻿namespace _09_Portfolio
 {
-    internal interface IAsset
+   public interface IAsset
     {
         double GetValue();
     }

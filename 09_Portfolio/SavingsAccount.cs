@@ -4,9 +4,7 @@ namespace _09_Portfolio
 {
     internal class SavingsAccount : IAsset
     {
-        private string account;
-        private double value;
-        private double interestRate;
+        
         
         public double InterestRate { get; set; }
         public string Account { get; set; }
@@ -17,24 +15,29 @@ namespace _09_Portfolio
 
         }
       
-        public SavingsAccount(string v1, double v2, double v3)
+        public SavingsAccount(string account, double value, double interestRate)
         {
-            account = v1;
-            value = v2;
-            interestRate = v3;
+            Account = account;
+            Value = value;
+            InterestRate = interestRate;
         }
 
         public double GetValue()
         {
-            return value;
+            return Value;
         }
 
         public override string ToString()
         {
             
             {
-                return "SavingsAccount[" + "value=" + value + ".0," + "interestRate=" + interestRate + "]";
+                return "SavingsAccount[" + "value=" + Value + ".0," + "interestRate=" + InterestRate + "]";
             }
+        }
+
+        public void ApplyInterest()
+        {
+           Value += Value * (InterestRate /100);
         }
     }
 }

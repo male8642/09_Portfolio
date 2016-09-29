@@ -2,7 +2,7 @@
 
 namespace _09_Portfolio
 {
-    internal class Stock
+    public class Stock : IAsset
     {
         private string symbol;
         private double pricepershare;
@@ -57,7 +57,7 @@ namespace _09_Portfolio
             }
         }
 
-        internal double GetValue()
+       public double GetValue()
         {
             return pricepershare * numshares;
         }
@@ -79,6 +79,15 @@ namespace _09_Portfolio
 
         }
 
+        public static object TotalValue(IAsset[] portfolio)
+        {
+            double total = 0;
+            foreach (IAsset p in portfolio)
+            {
+                total = total + p.GetValue();
+            }
+            return total;
+        }
 
         public override bool Equals(object obj)
         {

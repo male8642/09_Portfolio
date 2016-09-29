@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections;
 using System.Collections.Generic;
+using _09_Portfolio;
 
 //namespace _09_Portfolio
 //{
@@ -10,34 +11,35 @@ using System.Collections.Generic;
 
 //    //THESE ARE THE THIRD TESTS YOU SHOULD DO 
 
-//    [TestClass]
-//    public class PortFolioTests
-//    {
-//        Stock stockHP = new Stock("HPQ", 60.03, 120);
-//        Stock stockIBM = new Stock("IBM", 32.11, 50);
-//        SavingsAccount cd1000 = new SavingsAccount("Account 556677", 1000, 4.5);
+[TestClass]
+public class PortFolioTests
+{
+    Stock stockHP = new Stock("HPQ", 60.03, 120);
+    Stock stockIBM = new Stock("IBM", 32.11, 50);
+    SavingsAccount cd1000 = new SavingsAccount("Account 556677", 1000, 4.5);
 
 
-//        [TestMethod]
-//        public void PortfolioCanUseConstructor()
-//        {
-//            List<Asset> stocks = new List<Asset>();
-//            stocks.Add(stockHP);
-//            stocks.Add(stockIBM);
-//            Portfolio portfolio = new Portfolio(stocks);
-//            Assert.AreEqual(8809.1, portfolio.GetTotalValue());
-//        }
+    [TestMethod]
+    public void PortfolioCanUseConstructor()
+    {
+        List<IAsset> stocks = new List<IAsset>();
+        stocks.Add(stockHP);
+        stocks.Add(stockIBM);
+        Portfolio portfolio = new Portfolio(stocks);
+        Assert.AreEqual(8809.1, portfolio.GetTotalValue());
+    }
 
-//        [TestMethod]
-//        public void CanAddAssets()
-//        {
-//            Portfolio portfolio = new Portfolio();
-//            portfolio.AddAsset(stockHP);
-//            portfolio.AddAsset(stockIBM);
-//            portfolio.AddAsset(cd1000);
-//            Assert.AreEqual(9809.1, portfolio.GetTotalValue());
-//        }
+    [TestMethod]
+    public void CanAddAssets()
+    {
+        Portfolio portfolio = new Portfolio();
+        portfolio.AddIAsset(stockHP);
+        portfolio.AddIAsset(stockIBM);
+        portfolio.AddIAsset(cd1000);
+        Assert.AreEqual(9809.1, portfolio.GetTotalValue());
+    }
+}
 
-       
-//    }
-//}
+
+    
+
